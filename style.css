@@ -104,8 +104,9 @@ nav a:hover::after {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .hamburger span {
@@ -114,6 +115,20 @@ nav a:hover::after {
   height: 3px;
   background: var(--text-color);
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger open animation into X */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @media (max-width: 768px) {
