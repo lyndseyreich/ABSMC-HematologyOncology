@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 :root {
-  --sutter-teal: #004A73;
-  --sutter-teal-dark: #003A56;
-  --font-family: 'Inter', sans-serif;
-  --text-color: #222;
-  --background-color: #fff;
-  --card-bg: #f9f9f9;
-  --card-shadow: rgba(0, 0, 0, 0.1);
+  --sutter-teal: #007a85;
+  --sutter-teal-dark: #004f53;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --card-background: white;
+  --card-border: #ddd;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-family);
-  color: var(--text-color);
-  background-color: var(--background-color);
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 header {
@@ -28,13 +33,15 @@ header {
 
 header h1 {
   margin: 0;
+  color: white;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   font-weight: 600;
 }
 
@@ -44,85 +51,97 @@ nav a:hover {
 
 .hamburger {
   display: none;
-  cursor: pointer;
   flex-direction: column;
-  gap: 5px;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
 }
 
 .hamburger span {
-  background-color: white;
+  background: white;
   height: 3px;
-  width: 25px;
   border-radius: 2px;
-  display: block;
+  transition: 0.3s;
 }
 
-/* Hero Banner */
+nav.active {
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
-  position: relative;
   background-color: var(--sutter-teal);
   color: white;
-  text-align: center;
   padding: 4rem 2rem;
-  min-height: 250px;
+  position: relative;
+  text-align: center;
+}
+
+.hero-overlay h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--sutter-teal-dark);
+}
+
+main {
+  padding: 2rem;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.hero-overlay {
-  max-width: 800px;
-}
-
-.hero h2 {
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-/* Cards */
-.welcome-card, .card {
-  background-color: var(--card-bg);
-  box-shadow: 0 4px 10px var(--card-shadow);
-  padding: 1.5rem 2rem;
-  margin: 2rem auto;
-  max-width: 50vw;
+.welcome-card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
-  color: var(--text-color);
+  padding: 2rem;
+  max-width: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   line-height: 1.5;
 }
 
-h3, h4 {
-  margin-top: 0;
+.welcome-card p {
   margin-bottom: 1rem;
 }
 
-/* Responsive adjustments */
+.welcome-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+footer {
+  background-color: var(--sutter-teal-dark);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
-  .welcome-card, .card {
-    max-width: 90vw;
+  .welcome-card {
+    max-width: 90%;
   }
-  
+
   nav {
     display: none;
-    flex-direction: column;
-    background-color: var(--sutter-teal-dark);
-    position: absolute;
-    top: 60px;
-    left: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    background-color: var(--sutter-teal-dark);
   }
-  
+
   nav.active {
     display: flex;
   }
-  
+
   .hamburger {
     display: flex;
   }
