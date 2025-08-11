@@ -14,7 +14,7 @@ body {
 
 /* ===== Header ===== */
 header {
-  background: #1e2a38;
+  background: #00B2A9;
   color: white;
   padding: 1.5rem 2rem;
   position: sticky;
@@ -52,7 +52,7 @@ main {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #00B2A9;
+  background: #185cab;
   backdrop-filter: blur(8px);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
