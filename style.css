@@ -160,6 +160,41 @@ nav a:hover::after {
   .hamburger {
     display: flex;
   }
+
+  /* Responsive hero tweaks */
+  .hero {
+    height: 180px;
+    background-position: center top;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .hero-overlay {
+    padding: 0.5rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    background: var(--primary-color);
+    height: 140px;
+  }
+
+  .hero-overlay {
+    padding: 0.75rem 1rem;
+  }
+
+  .hero h2, .hero p {
+    text-shadow: none;
+    color: #fff;
+  }
 }
 
 /* ========================
@@ -205,4 +240,54 @@ main {
   padding: 0 1.5rem;
 }
 
-/* ===================*
+/* ========================
+   Cards
+======================== */
+.card-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ========================
+   Section Dividers
+======================== */
+main > * + * {
+  border-top: 3px solid var(--primary-color);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* ========================
+   Footer
+======================== */
+footer {
+  background: var(--footer-bg);
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
