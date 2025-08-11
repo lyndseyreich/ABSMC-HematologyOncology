@@ -36,9 +36,9 @@ nav {
 }
 
 nav a {
-  color: #ffffffcc;
+  color: #7FDBFF;
   margin: 0 1rem;
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 600;
   transition: color 0.2s ease-in-out;
 }
