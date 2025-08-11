@@ -52,11 +52,13 @@ main {
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #185cab;
+  background: #163d92;
   backdrop-filter: blur(8px);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  color: white;
+
 }
 
 /* ===== Typo*
