@@ -1,120 +1,178 @@
-/* === Color Variables === */
-:root {
-  --sutter-teal: #007C89;        /* Sutter Health teal */
-  --sutter-teal-dark: #005B63;   /* Darker version */
-  --text-light: #ffffff;
-  --text-dark: #333333;
-}
-
-/* === Base Styles === */
+/* Base styles */
 body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text-dark);
+  background: #fff;
+  color: #333;
 }
 
-/* Header & Footer */
-header, footer {
-  background-color: var(--sutter-teal-dark);
-  color: var(--text-light);
-  padding: 1rem;
-  text-align: center;
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-/* Navigation */
-nav {
-  background-color: var(--sutter-teal);
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Header and navigation */
+header {
+  background-color: #009CA6; /* Sutter turquoise */
+  color: white;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: relative;
+  z-index: 10;
 }
 
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: bold;
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-/* Hero Banner */
-.hero {
-  background-color: var(--sutter-teal);
-  color: var(--text-light);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-/* Cards */
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 2rem auto;
-}
-
-.card {
-  background: #ffffff;
-  padding: 1.5rem;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  width: 50%;
-  max-width: 500px;
-  text-align: center;
-}
-
-/* Mobile Navigation Button */
+/* Hamburger menu styles */
 .hamburger {
-  display: none;
+  width: 28px;
+  height: 22px;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
-  z-index: 1100;
+  position: relative;
+  z-index: 20;
 }
 
 .hamburger span {
-  background: var(--text-light);
+  display: block;
   height: 3px;
-  margin: 4px 0;
-  width: 25px;
+  background-color: white; /* Sutter turquoise for hamburger lines */
+  border-radius: 2px;
+  transition: 0.3s ease;
 }
 
-/* === Mobile Styles === */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    position: fixed;
-    top: 10px;
-    right: 10px;
+/* Hamburger open animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main and cards */
+main {
+  padding: 1rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* On desktop, cards left aligned */
+  margin-left: 0;
+}
+
+/* Individual card */
+.card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  /* Center cards on mobile */
+  .card-container {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
   }
 
+  .card {
+    width: 90vw;
+    max-width: 600px;
+  }
+
+  /* Navigation styles for mobile */
   nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: var(--sutter-teal);
-    height: 100vh;
-    width: 250px;
+    position: absolute;
+    top: 56px;
+    right: 0;
+    background-color: #009CA6; /* Sutter turquoise */
     flex-direction: column;
-    padding-top: 3.5rem;
-    transform: translateX(-260px);
+    width: 200px;
+    transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 1050;
+    border-radius: 0 0 0 8px;
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.15);
   }
 
   nav.active {
     transform: translateX(0);
   }
 
-  /* Cards on Mobile */
-  .card-container {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
+  nav a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .card {
-    width: 90vw;
-    max-width: none;
-    margin: 0 auto;
+  /* Hamburger fixed top right */
+  .hamburger {
+    position: fixed;
+    top: 12px;
+    right: 16px;
   }
 }
