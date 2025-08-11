@@ -14,6 +14,22 @@
       burger.classList.toggle('open');
     }
   </script>
+  <style>
+    /* Mobile card centering fix */
+    @media (max-width: 768px) {
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+      }
+      .card {
+        max-width: 600px;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>

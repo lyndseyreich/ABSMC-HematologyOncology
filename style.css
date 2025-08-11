@@ -1,154 +1,120 @@
-/* Reset and base styles */
+/* === Color Variables === */
+:root {
+  --sutter-teal: #007C89;        /* Sutter Health teal */
+  --sutter-teal-dark: #005B63;   /* Darker version */
+  --text-light: #ffffff;
+  --text-dark: #333333;
+}
+
+/* === Base Styles === */
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
   margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #333;
+  font-family: Arial, sans-serif;
+  color: var(--text-dark);
 }
 
-h1, h2, h3, h4 {
-  margin-top: 0;
-}
-
-main > h2 {
-  margin-bottom: 1.5rem; /* Added spacing below main h2 headings */
+/* Header & Footer */
+header, footer {
+  background-color: var(--sutter-teal-dark);
+  color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
 }
 
 /* Navigation */
-header {
-  background-color: #005f66; /* Darker Sutter Teal */
-  color: white;
-  padding: 1rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 nav {
+  background-color: var(--sutter-teal);
   display: flex;
+  justify-content: center;
   gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 nav a {
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Hero Banner */
+.hero {
+  background-color: var(--sutter-teal);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* Hamburger menu for mobile */
+/* Cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  width: 50%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Mobile Navigation Button */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1100;
 }
 
-/* hamburger bars */
 .hamburger span {
+  background: var(--text-light);
   height: 3px;
+  margin: 4px 0;
   width: 25px;
-  background: white;
-  margin-bottom: 4px;
-  border-radius: 2px;
 }
 
-/* Show hamburger on small screens */
+/* === Mobile Styles === */
 @media (max-width: 768px) {
-  /* Position hamburger top right and above nav */
   .hamburger {
     display: flex;
     position: fixed;
-    top: 10px;      /* Moved higher near top */
-    right: 10px;    /* Keep right aligned */
-    z-index: 1100;  /* Above nav */
+    top: 10px;
+    right: 10px;
   }
 
   nav {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #007c89; /* Standard Sutter Teal */
+    background-color: var(--sutter-teal);
     height: 100vh;
     width: 250px;
     flex-direction: column;
     padding-top: 3.5rem;
     transform: translateX(-260px);
     transition: transform 0.3s ease;
-    z-index: 1050; /* Under hamburger */
+    z-index: 1050;
   }
+
   nav.active {
     transform: translateX(0);
   }
-}
 
-/* Hero banner */
-.hero {
-  background-color: #007c89; /* Standard Sutter Teal */
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-overlay {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Card container and card styling */
-.card-container {
-  display: flex;
-  gap: 2rem; /* horizontal spacing between cards */
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.card {
-  background: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 50vw; /* about half screen */
-  max-width: 600px;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-/* Footer */
-footer {
-  background-color: #005f66; /* Darker Sutter Teal */
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* Additional responsive improvements */
-@media (max-width: 768px) {
+  /* Cards on Mobile */
   .card-container {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
+  }
+
+  .card {
+    width: 90vw;
+    max-width: none;
+    margin: 0 auto;
   }
 }
