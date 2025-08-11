@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="style.css" />
   <script>
     function toggleMenu() {
-      document.querySelector('nav').classList.toggle('active');
-      document.querySelector('.hamburger').classList.toggle('open');
+      const nav = document.querySelector('nav');
+      const burger = document.querySelector('.hamburger');
+      nav.classList.toggle('active');
+      burger.classList.toggle('open');
     }
   </script>
 </head>
@@ -34,6 +36,17 @@
   <main class="fade-in">
     <h2>Welcome!</h2>
     <p>This site provides curated resources and guidance for your Hematology/Oncology rotation in Internal Medicine.</p>
+
+    <section class="card-container">
+      <div class="card">
+        <h3>Core Topics</h3>
+        <p>Review essential hematology and oncology concepts during your rotation.</p>
+      </div>
+      <div class="card">
+        <h3>Clinical Pearls</h3>
+        <p>Practical tips from attendings and fellows to guide your daily practice.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
