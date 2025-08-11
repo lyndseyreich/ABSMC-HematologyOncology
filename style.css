@@ -1,3 +1,8 @@
+:root {
+  --sutter-teal: #00AAA6;
+  --sutter-teal-dark: #007f7c; /* darker shade of sutter teal */
+}
+
 /* Reset and base styles */
 body {
   font-family: 'Inter', sans-serif;
@@ -18,22 +23,21 @@ main > h2 {
 
 /* Navigation */
 header {
-  background-color: #004d3a; /* Darker Sutter Teal */
+  background-color: var(--sutter-teal-dark);
   color: white;
   padding: 1rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1100; /* keep header above others */
+  z-index: 1001; /* ensure header is above nav */
 }
 
 nav {
   display: flex;
   gap: 1rem;
-  z-index: 1200; /* above hero & cards */
-  position: relative;
-  background-color: #006a4d; /* Standard Sutter Teal */
+  background-color: var(--sutter-teal);
+  z-index: 1002; /* nav above cards and hero */
 }
 
 nav a {
@@ -51,7 +55,6 @@ nav a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 1300;
 }
 
 .hamburger span {
@@ -68,33 +71,29 @@ nav a:hover {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #006a4d; /* Standard Sutter Teal */
     height: 100vh;
     width: 250px;
     flex-direction: column;
     padding-top: 3.5rem;
     transform: translateX(-260px);
     transition: transform 0.3s ease;
-    z-index: 1200;
   }
   nav.active {
     transform: translateX(0);
   }
   .hamburger {
     display: flex;
-    position: relative;
-    z-index: 1300;
   }
 }
 
 /* Hero banner */
 .hero {
-  background-color: #006a4d; /* Standard Sutter Teal */
+  background-color: var(--sutter-teal);
   color: white;
   padding: 4rem 2rem;
   text-align: center;
   position: relative;
-  z-index: 900;
+  z-index: 100; /* below nav and header */
 }
 
 .hero-overlay {
@@ -102,7 +101,6 @@ nav a:hover {
   margin: 0 auto;
 }
 
-/* Fade-in animation */
 .fade-in {
   animation: fadeIn 1s ease-in forwards;
   opacity: 0;
@@ -117,13 +115,11 @@ nav a:hover {
 /* Card container and card styling */
 .card-container {
   display: flex;
-  gap: 2rem; /* horizontal spacing between cards */
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  position: relative;
-  z-index: 900;
 }
 
 .card {
@@ -138,16 +134,14 @@ nav a:hover {
 
 /* Footer */
 footer {
-  background-color: #004d3a; /* Darker Sutter Teal */
+  background-color: var(--sutter-teal-dark);
   color: white;
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  position: relative;
-  z-index: 1100;
 }
 
-/* Responsive improvements */
+/* Additional responsive improvements */
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
@@ -157,3 +151,4 @@ footer {
     width: 90vw;
   }
 }
+
