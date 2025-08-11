@@ -3,54 +3,44 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #222;
+  background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 600;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75rem;
+  color: #004a73; /* Sutter teal */
 }
 
 p {
-  margin-bottom: 1.25em;
+  margin-bottom: 1rem;
 }
 
-/* Header & navigation */
+/* Header */
 header {
-  background-color: #004d40; /* dark teal shade */
-  color: #fff;
-  padding: 1rem 1.5rem;
+  background-color: #004a73; /* Sutter teal */
+  color: white;
+  padding: 1rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.6rem;
-}
-
-nav {
-  display: flex;
-  gap: 1.2rem;
+  font-weight: 600;
 }
 
 nav a {
-  color: #a7ffeb; /* light teal */
+  color: white;
   text-decoration: none;
+  margin-left: 1.5rem;
   font-weight: 600;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
 }
 
-nav a:hover,
-nav a:focus {
-  background-color: #00796b; /* sutter teal hover */
-  color: #fff;
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* Hamburger menu */
@@ -58,112 +48,114 @@ nav a:focus {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
 }
 
 .hamburger span {
-  width: 25px;
   height: 3px;
-  background-color: white;
+  width: 25px;
+  background: white;
+  margin-bottom: 5px;
   border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Responsive nav */
-@media (max-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 220px;
-    background-color: #004d40;
-    flex-direction: column;
-    padding-top: 4rem;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-  nav.active {
-    left: 0;
-  }
-  .hamburger {
-    display: flex;
-  }
 }
 
 /* Hero banner */
 .hero {
-  background-color: #00695c; /* Sutter teal */
-  color: #ffffff;
-  padding: 4rem 1.5rem;
+  background: linear-gradient(
+      rgba(0, 74, 115, 0.7), 
+      rgba(0, 74, 115, 0.7)
+    ),
+    url('hero-image.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 4rem 2rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;   /* Prevent horizontal overflow on mobile */
+  box-sizing: border-box;  /* Include padding in width */
+  overflow: hidden;  /* Hide overflow */
 }
 
 .hero-overlay {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .hero h2 {
+  margin-top: 0;
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
+  font-weight: 600;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-top: 0;
-  color: #e0f2f1;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
 }
 
 /* Welcome card */
 .welcome-card {
   max-width: 50%;
-  margin: 3rem auto;
-  padding: 2rem 2.5rem;
-  background-color: #e0f2f1;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  color: #004d40;
-  font-size: 1.1rem;
-}
-
-.welcome-card h3 {
-  margin-bottom: 1.5rem;
-}
-
-/* Fade in animation */
-.fade-in {
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  margin: 2rem auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Footer */
 footer {
-  background-color: #004d40;
-  color: #a7ffeb;
   text-align: center;
-  padding: 1rem 1.5rem;
-  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: #004a73;
+  color: white;
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .welcome-card {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #004a73;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .welcome-card {
+    max-width: 95%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
 }
