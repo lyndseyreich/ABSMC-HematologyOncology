@@ -20,16 +20,11 @@ main > h2 {
 header {
   background-color: #006a4d; /* Sutter Teal */
   color: white;
-  padding-left: 1rem;
-  padding-right: 1.5rem; /* Added right padding so hamburger doesn't get cut off */
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-sizing: border-box; /* Ensure padding is included in width */
-  min-width: 100vw; /* Prevent header from shrinking narrower than viewport */
 }
 
 nav {
@@ -75,7 +70,6 @@ nav a:hover {
     padding-top: 3.5rem;
     transform: translateX(-260px);
     transition: transform 0.3s ease;
-    z-index: 999;
   }
   nav.active {
     transform: translateX(0);
@@ -125,9 +119,11 @@ nav a:hover {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 320px;
-  max-width: 100%;
+  width: 50%;        /* updated to take about half the screen */
+  max-width: 600px;  /* max width for readability */
   box-sizing: border-box;
+  margin-left: auto;  /* center horizontally */
+  margin-right: auto;
 }
 
 /* Footer */
@@ -144,5 +140,8 @@ footer {
   .card-container {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .card {
+    width: 100%; /* full width on small screens */
   }
 }
