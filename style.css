@@ -70,6 +70,7 @@ nav a:hover {
     padding-top: 3.5rem;
     transform: translateX(-260px);
     transition: transform 0.3s ease;
+    z-index: 1000; /* Fix nav layering above cards */
   }
   nav.active {
     transform: translateX(0);
@@ -119,11 +120,9 @@ nav a:hover {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 50%;        /* updated to take about half the screen */
-  max-width: 600px;  /* max width for readability */
+  width: 50vw; /* approx half screen */
+  max-width: 100%;
   box-sizing: border-box;
-  margin-left: auto;  /* center horizontally */
-  margin-right: auto;
 }
 
 /* Footer */
@@ -142,6 +141,6 @@ footer {
     gap: 1.5rem;
   }
   .card {
-    width: 100%; /* full width on small screens */
+    width: 90vw;
   }
 }
