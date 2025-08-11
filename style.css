@@ -20,11 +20,16 @@ main > h2 {
 header {
   background-color: #006a4d; /* Sutter Teal */
   color: white;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1.5rem; /* Added right padding so hamburger doesn't get cut off */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  min-width: 100vw; /* Prevent header from shrinking narrower than viewport */
 }
 
 nav {
@@ -47,7 +52,6 @@ nav a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 10000;
 }
 
 .hamburger span {
@@ -58,34 +62,24 @@ nav a:hover {
   border-radius: 2px;
 }
 
-/* Show hamburger on small screens and fix mobile nav */
+/* Show hamburger on small screens */
 @media (max-width: 768px) {
   nav {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #006a4d; /* Sutter Teal */
+    background-color: #006a4d;
     height: 100vh;
-    width: 80vw;
-    max-width: 250px;
+    width: 250px;
     flex-direction: column;
     padding-top: 3.5rem;
-    transform: translateX(-100%);
+    transform: translateX(-260px);
     transition: transform 0.3s ease;
-    z-index: 9999;
-    overflow-y: auto; /* allow scroll if too tall */
+    z-index: 999;
   }
-
-  /* Add left margin to hamburger on mobile so it’s spaced from site title */
-@media (max-width: 768px) {
-  .hamburger {
-    margin-left: 1rem;
-  }
-}
   nav.active {
     transform: translateX(0);
   }
-
   .hamburger {
     display: flex;
   }
