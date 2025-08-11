@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #2a3d66;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #ffffffcc;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Main Content */
+main {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  background: #f1f1f1;
+  margin-top: 4rem;
+}
+
+/* Typography */
+h2 {
+  color: #2a3d66;
+}
+
+a {
+  color: #3179f6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
