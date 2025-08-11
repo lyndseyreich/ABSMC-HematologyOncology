@@ -81,7 +81,7 @@ nav a:hover {
 
 /* Hero banner */
 .hero {
-  background-color: #006a4d; /* Sutter Teal */
+  background-color: #006a4d !important
   color: white;
   padding: 4rem 2rem;
   text-align: center;
