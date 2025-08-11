@@ -204,6 +204,11 @@ nav a:hover::after {
   margin-bottom: 1.2em;
 }
 
+.welcome-card h3,
+.welcome-card h4 {
+  margin-bottom: 1em;
+}
+
 footer {
   background: var(--footer-bg);
   color: #ccc;
