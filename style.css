@@ -61,8 +61,8 @@ nav a:hover {
 /* Hero banner */
 .hero {
   background: linear-gradient(
-      rgba(0, 74, 115, 0.7), 
-      rgba(0, 74, 115, 0.7)
+      rgb(0, 74, 115), 
+      rgb(0, 74, 115)
     ),
     url('hero-image.jpg') no-repeat center center;
   background-size: cover;
