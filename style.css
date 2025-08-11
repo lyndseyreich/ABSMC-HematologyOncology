@@ -13,38 +13,27 @@ h1, h2, h3, h4 {
 }
 
 main > h2 {
-  margin-bottom: 1.5rem; /* Added spacing below main h2 headings */
+  margin-bottom: 1.5rem; /* spacing below main h2 headings */
 }
 
 /* Navigation */
 header {
-  background-color: #006a4d; /* Sutter Teal */
+  background-color: #004d3a; /* Darker Sutter Teal */
   color: white;
   padding: 1rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1100; /* keep header above others */
 }
 
 nav {
   display: flex;
   gap: 1rem;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #006a4d;
-  height: 100vh;
-  width: 250px;
-  flex-direction: column;
-  padding-top: 3.5rem;
-  transform: translateX(-260px);
-  transition: transform 0.3s ease;
-  z-index: 1000; /* Make nav overlay all content */
-}
-
-nav.active {
-  transform: translateX(0);
+  z-index: 1200; /* above hero & cards */
+  position: relative;
+  background-color: #006a4d; /* Standard Sutter Teal */
 }
 
 nav a {
@@ -62,8 +51,7 @@ nav a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  margin-left: 1rem; /* keep some spacing from header text */
-  z-index: 1100; /* Above nav */
+  z-index: 1300;
 }
 
 .hamburger span {
@@ -77,21 +65,36 @@ nav a:hover {
 /* Show hamburger on small screens */
 @media (max-width: 768px) {
   nav {
-    /* already fixed position above */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #006a4d; /* Standard Sutter Teal */
+    height: 100vh;
+    width: 250px;
+    flex-direction: column;
+    padding-top: 3.5rem;
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+    z-index: 1200;
+  }
+  nav.active {
+    transform: translateX(0);
   }
   .hamburger {
     display: flex;
+    position: relative;
+    z-index: 1300;
   }
 }
 
 /* Hero banner */
 .hero {
-  background-color: #006a4d; /* Sutter Teal */
+  background-color: #006a4d; /* Standard Sutter Teal */
   color: white;
   padding: 4rem 2rem;
   text-align: center;
   position: relative;
-  z-index: 0; /* Lower than nav */
+  z-index: 900;
 }
 
 .hero-overlay {
@@ -99,7 +102,7 @@ nav a:hover {
   margin: 0 auto;
 }
 
-/* Fade in */
+/* Fade-in animation */
 .fade-in {
   animation: fadeIn 1s ease-in forwards;
   opacity: 0;
@@ -120,7 +123,7 @@ nav a:hover {
   margin-top: 1rem;
   margin-bottom: 2rem;
   position: relative;
-  z-index: 0; /* Lower than nav */
+  z-index: 900;
 }
 
 .card {
@@ -128,11 +131,9 @@ nav a:hover {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 50vw; /* about half screen width */
+  width: 50vw;
   max-width: 600px;
   box-sizing: border-box;
-  position: relative;
-  z-index: 0; /* Lower than nav */
 }
 
 /* Footer */
@@ -142,6 +143,8 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
+  position: relative;
+  z-index: 1100;
 }
 
 /* Responsive improvements */
@@ -152,6 +155,5 @@ footer {
   }
   .card {
     width: 90vw;
-    max-width: none;
   }
 }
