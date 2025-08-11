@@ -1,64 +1,128 @@
-/* ===== Global Reset ===== */
+/* ========================
+   Global Styles
+======================== */
+:root {
+  --primary-color: #006b8f;   /* deep teal-blue */
+  --primary-hover: #004f68;
+  --background-color: #f9fafb;
+  --text-color: #222;
+  --header-bg: #ffffff;
+  --footer-bg: #1a1a1a;
+}
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom right, #f0f4f8, #dce6f1);
-  color: #1a1a1a;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-/* ===== Header ===== */
+/* ========================
+   Header
+======================== */
 header {
-  background: #00B2A9;
-  color: white;
-  padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
+  background: var(--header-bg);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
 nav {
-  margin-top: 1rem;
-  text-align: center;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: #eff4f5;
-  margin: 0 1rem;
-  text-decoration: underline;
-  font-weight: 600;
-  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: var(--primary-color);
 }
 
-/* ===== Main Container ===== */
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ========================
+   Main Content
+======================== */
 main {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #163d92;
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  color: white;
-
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 
-/* ===== Typo*
+main h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+main p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================
+   Footer
+======================== */
+footer {
+  background: var(--footer-bg);
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ========================
+   Responsive
+======================== */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
