@@ -2,7 +2,7 @@
    Global Styles
 ======================== */
 :root {
-  --primary-color: #006b8f;   /* deep teal-blue */
+  --primary-color: #006b8f;
   --primary-hover: #004f68;
   --background-color: #f9fafb;
   --text-color: #222;
@@ -29,6 +29,22 @@ body {
 }
 
 /* ========================
+   Animations
+======================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
    Header
 ======================== */
 header {
@@ -47,6 +63,7 @@ header h1 {
   color: var(--primary-color);
 }
 
+/* Nav base */
 nav {
   display: flex;
   gap: 1rem;
@@ -79,6 +96,43 @@ nav a:hover {
 
 nav a:hover::after {
   width: 100%;
+}
+
+/* ========================
+   Hamburger Menu
+======================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--header-bg);
+    padding: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 
 /* ========================
@@ -115,14 +169,4 @@ footer {
 
 footer p {
   margin: 0;
-}
-
-/* ========================
-   Responsive
-======================== */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 }
