@@ -151,12 +151,14 @@ nav a:hover::after {
   }
 }
 
-/* Narrowed welcome card for readability */
+/* Adjusted welcome card width for ~50% of page on desktop */
 .welcome-card {
   background: #fff;
   padding: 2rem 2.5rem;
   margin: 2rem auto;
-  max-width: 600px;
+  width: 50vw;
+  max-width: 800px;
+  min-width: 300px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   line-height: 1.5;
