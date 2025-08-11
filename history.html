@@ -2,51 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>History of Oncology</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Sutter Health turquoise and darker variant */
-    :root {
-      --sutter-teal: #00A6A0;
-      --sutter-teal-dark: #00837E;
-    }
-
-    header, footer, nav {
-      background-color: var(--sutter-teal-dark);
-      color: white;
-    }
-
-    header h1 {
-      color: white;
-    }
-
-    nav a {
-      color: white;
-    }
-
-    /* Hamburger positioning fix */
-    .hamburger {
-      position: absolute;
-      top: 0.5rem; /* Moves it higher */
-      right: 1rem;
-    }
-
-    /* Mobile card centering fix */
-    @media (max-width: 768px) {
-      .card-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 1rem;
-      }
-      .card {
-        max-width: 600px;
-        width: 100%;
-      }
-    }
-  </style>
   <script>
     function toggleMenu() {
       const nav = document.querySelector('nav');
@@ -58,7 +17,7 @@
 </head>
 <body>
   <header>
-    <h1>Hematology/Oncology Rotation</h1>
+    <h1>History of Oncology</h1>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -75,19 +34,56 @@
     </nav>
   </header>
 
+  <section class="hero fade-in">
+    <div class="hero-overlay">
+      <h2>The History of Oncology</h2>
+      <p>Tracing the evolution of cancer diagnosis and treatment</p>
+    </div>
+  </section>
+
   <main class="fade-in">
-    <section class="card-container">
+    <section class="history-card card-container">
       <article class="card">
-        <!-- your history content stays the same -->
-        <h2>A Brief History of Oncology</h2>
-        <p>Medical Oncology is one of the newest disciplines in medicine...</p>
-        <!-- [rest of the text unchanged] -->
+        <h3>Ancient Perspectives</h3>
+        <p>
+          The history of oncology can be traced back thousands of years. Ancient Egyptian papyri, such as the Edwin Smith Papyrus (circa 1600 BCE), describe tumors and ulcers, some of which were likely cancerous. Physicians at the time could only diagnose and treat superficial lesions, often using cauterization.
+        </p>
+
+        <h3>Hippocrates and the Birth of the Term "Cancer"</h3>
+        <p>
+          The Greek physician Hippocrates (460–370 BCE) used the terms "carcinos" and "carcinoma" to describe non-ulcer-forming and ulcer-forming tumors, respectively. The words were derived from the Greek word for crab, inspired by the appearance of certain tumors with finger-like projections.
+        </p>
+
+        <h3>Middle Ages and Renaissance</h3>
+        <p>
+          During the Middle Ages, medical understanding of cancer stagnated in Europe, but surgical techniques gradually improved. The Renaissance brought renewed interest in human anatomy and pathology, laying the groundwork for more scientific approaches.
+        </p>
+
+        <h3>19th Century Advances</h3>
+        <p>
+          With the advent of anesthesia and antisepsis, surgery became a safer and more effective option for removing tumors. Pathologists like Rudolf Virchow advanced the understanding of cancer at the cellular level, linking abnormal cell growth to disease.
+        </p>
+
+        <h3>20th Century Breakthroughs</h3>
+        <p>
+          The discovery of X-rays in 1895 and radium shortly thereafter revolutionized cancer treatment. Radiation therapy emerged as a new modality, complemented by the rise of chemotherapy in the mid-20th century. Advances in genetics and molecular biology deepened our understanding of oncogenes, tumor suppressor genes, and cancer pathways.
+        </p>
+
+        <h3>Modern Era</h3>
+        <p>
+          Today, oncology encompasses a wide range of diagnostic and therapeutic strategies, from precision medicine and immunotherapy to targeted molecular treatments. Multidisciplinary care teams, advanced imaging, and minimally invasive surgical techniques have transformed patient outcomes.
+        </p>
+
+        <h3>Looking Ahead</h3>
+        <p>
+          Research continues to focus on early detection, individualized therapy, and strategies to prevent cancer altogether. The integration of AI, big data, and genomic sequencing is expected to further advance the field, making cancer treatment more effective and personalized.
+        </p>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Internal Medicine Program</p>
+    <p>&copy; 2025 Sutter ABSMC Internal Medicine Program</p>
   </footer>
 </body>
 </html>
