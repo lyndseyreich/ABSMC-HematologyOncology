@@ -76,6 +76,12 @@ nav a:hover {
     overflow-y: auto; /* allow scroll if too tall */
   }
 
+  /* Add left margin to hamburger on mobile so it’s spaced from site title */
+@media (max-width: 768px) {
+  .hamburger {
+    margin-left: 1rem;
+  }
+}
   nav.active {
     transform: translateX(0);
   }
