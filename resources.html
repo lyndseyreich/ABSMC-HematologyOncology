@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Heme/Onc Rotation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const burger = document.querySelector('.hamburger');
+      nav.classList.toggle('active');
+      burger.classList.toggle('open');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Hematology/Oncology Rotation</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="literature.html">Literature</a>
@@ -22,15 +34,26 @@
     </nav>
   </header>
 
- <main>
-  <h2>Resources</h2>
-  <ul>
-    <li><a href="#">Chemo Drug Sheets</a></li>
-    <li><a href="#">Patient Handouts</a></li>
-    <li><a href="#">Risk Calculators</a></li>
-  </ul>
-</main>
-
+  <main class="fade-in">
+    <h2>Resources</h2>
+    <section class="card-container">
+      <article class="card">
+        <h3>Chemo Drug Sheets</h3>
+        <p>Quick reference sheets on common chemotherapy agents, dosing, and side effects.</p>
+        <a href="#">View Sheets</a>
+      </article>
+      <article class="card">
+        <h3>Patient Handouts</h3>
+        <p>Educational materials designed for patient understanding and support.</p>
+        <a href="#">View Handouts</a>
+      </article>
+      <article class="card">
+        <h3>Risk Calculators</h3>
+        <p>Tools to estimate cancer risk and help guide clinical decisions.</p>
+        <a href="#">Use Calculators</a>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Internal Medicine Program</p>
