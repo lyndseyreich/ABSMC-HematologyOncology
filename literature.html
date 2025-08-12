@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heme/Onc Rotation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const burger = document.querySelector('.hamburger');
+      nav.classList.toggle('active');
+      burger.classList.toggle('open');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Hematology/Oncology Rotation</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="literature.html">Literature</a>
@@ -22,14 +34,23 @@
     </nav>
   </header>
 
-<main>
-  <h2>Key Literature & Guidelines</h2>
-  <ul>
-    <li><a href="https://www.nccn.org/">NCCN Guidelines</a></li>
-    <li><a href="https://www.uptodate.com/">UpToDate Articles</a></li>
-    <li><a href="#">High-yield ASCO papers</a></li>
-  </ul>
-</main>
+  <main>
+    <section>
+      <h2>Key Literature &amp; Guidelines</h2>
+      <ul>
+        <li><a href="https://www.nccn.org/" target="_blank" rel="noopener noreferrer">NCCN Guidelines</a></li>
+        <li><a href="https://www.uptodate.com/" target="_blank" rel="noopener noreferrer">UpToDate Articles</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">High-yield ASCO papers</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Internal Medicine Program</p>
+  </footer>
+</body>
+</html>
+
 
 
   <footer>
