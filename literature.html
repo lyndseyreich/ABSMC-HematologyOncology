@@ -2,27 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Heme/Onc Rotation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('nav');
-      const burger = document.querySelector('.hamburger');
-      nav.classList.toggle('active');
-      burger.classList.toggle('open');
-    }
-  </script>
 </head>
 <body>
   <header>
     <h1>Hematology/Oncology Rotation</h1>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="literature.html">Literature</a>
@@ -35,15 +22,70 @@
   </header>
 
   <main>
-    <section class="card">
+    <section class="card literature-card">
       <h2>Key Literature</h2>
-      <p>
-        The New England Journal of Medicine is an excellent resource for high quality and concise review articles on cancer and cancer-associated topics. We have compiled a short list of articles here. This is not a comprehensive list, but rather is intended to give you an introduction to important topics.
-      </p>
+      <p>The New England Journal of Medicine is an excellent resource for high quality and concise review articles on cancer and cancer-associated topics. We have compiled a short list of articles here. This is not a comprehensive list, but rather is intended to give you an introduction to important topics.</p>
+
+      <h3>Hematology</h3>
       <ul>
-        <li><a href="https://www.nccn.org/" target="_blank" rel="noopener noreferrer">NCCN Guidelines</a></li>
-        <li><a href="https://www.uptodate.com/" target="_blank" rel="noopener noreferrer">UpToDate Articles</a></li>
-        <li><a href="#" target="_blank" rel="noopener noreferrer">High-yield ASCO papers</a></li>
+        <li><a href="https://www.mayoclinicproceedings.org/article/S0025-6196(11)61568-1/fulltext" target="_blank" rel="noopener noreferrer">How to Interpret and Pursue an Abnormal Complete Blood Cell Count in Adults - Tefferi et al.</a></li>
+        <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra1904794" target="_blank" rel="noopener noreferrer">Myelodysplastic Syndromes - Cazzola M.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39908433/" target="_blank" rel="noopener noreferrer">Hemophagocytic Lymphohistiocytosis - Henter JI.</a></li>
+      </ul>
+
+      <h3>Solid Tumors</h3>
+
+      <h4>Gastrointestinal</h4>
+      <ul>
+        <li><strong>Gastric Cancer</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1904819" target="_blank" rel="noopener noreferrer">Comprehensive Review</a></li>
+        <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra1404198" target="_blank" rel="noopener noreferrer">Pancreatic Adenocarcinoma - Ryan DP et al.</a></li>
+        <li><strong>Colon Cancer</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1604336" target="_blank" rel="noopener noreferrer">Key Review</a></li>
+        <li><a href="https://www.nejm.org/doi/10.1056/NEJMra1713263" target="_blank" rel="noopener noreferrer">Hepatocellular Carcinoma - Villanueva A.</a></li>
+      </ul>
+
+      <h4>Genitourinary</h4>
+      <ul>
+        <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra2404457" target="_blank" rel="noopener noreferrer">Cervical Cancer - Tewari KS.</a></li>
+      </ul>
+
+      <h4>Breast</h4>
+      <ul>
+        <li><strong>Breast Cancer</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra2106186" target="_blank" rel="noopener noreferrer">Recent Review</a></li>
+      </ul>
+
+      <h4>Mediastinum</h4>
+      <ul>
+        <li><strong>Mediastinal Tumors</strong> - <a href="https://pubmed.ncbi.nlm.nih.gov/30819136/" target="_blank" rel="noopener noreferrer">Comprehensive Review</a></li>
+      </ul>
+
+      <h4>Lymphoma</h4>
+      <ul>
+        <li><strong>Lymphoma</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1801435" target="_blank" rel="noopener noreferrer">Major Review</a></li>
+      </ul>
+
+      <h4>Leukemia</h4>
+      <ul>
+        <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra1406184" target="_blank" rel="noopener noreferrer">Acute Myeloid Leukemia - Döhner H et al.</a></li>
+      </ul>
+
+      <h4>Head & Neck</h4>
+      <ul>
+        <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra1715715" target="_blank" rel="noopener noreferrer">Head and Neck Cancer - Chow LQM.</a></li>
+      </ul>
+
+      <h4>Brain</h4>
+      <ul>
+        <li><strong>Brain Tumors</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1711985" target="_blank" rel="noopener noreferrer">Glioblastoma and other CNS tumors</a></li>
+      </ul>
+
+      <h4>Melanoma</h4>
+      <ul>
+        <li><strong>Melanoma</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1703487" target="_blank" rel="noopener noreferrer">Key Review</a></li>
+      </ul>
+
+      <h4>Sarcoma</h4>
+      <ul>
+        <li><strong>Sarcoma</strong> - <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1811407" target="_blank" rel="noopener noreferrer">Comprehensive Review</a></li>
       </ul>
     </section>
   </main>
@@ -53,3 +95,4 @@
   </footer>
 </body>
 </html>
+
