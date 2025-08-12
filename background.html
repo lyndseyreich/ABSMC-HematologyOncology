@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Heme/Onc Rotation</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heme/Onc Rotation - Cancer Biology Background</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      const burger = document.querySelector('.hamburger');
+      nav.classList.toggle('active');
+      burger.classList.toggle('open');
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Hematology/Oncology Rotation</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="literature.html">Literature</a>
@@ -22,11 +34,23 @@
     </nav>
   </header>
 
- <main>
-  <h2>Background Information on Cancer Biology</h2>
-  <p>Short teaching points or memorable cases can go here.</p>
-</main>
-
+  <main class="fade-in">
+    <h2>Background Information on Cancer Biology</h2>
+    <section class="card-container">
+      <article class="card">
+        <h3>Introduction</h3>
+        <p>Short teaching points or memorable cases can go here.</p>
+      </article>
+      <article class="card">
+        <h3>Cellular and Molecular Basics</h3>
+        <p>Explain cell cycle, oncogenes, tumor suppressor genes, and DNA repair mechanisms.</p>
+      </article>
+      <article class="card">
+        <h3>Tumor Microenvironment</h3>
+        <p>Discuss interactions between cancer cells and surrounding stromal and immune cells.</p>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Internal Medicine Program</p>
