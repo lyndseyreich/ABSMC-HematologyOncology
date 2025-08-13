@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pre-Survey</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .question {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .question p {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .likert {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .likert label {
+      flex: 1;
+      text-align: center;
+      background: #e6f4f5;
+      padding: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .likert input {
+      display: none;
+    }
+
+    .likert input:checked + label {
+      background: #009CA6;
+      color: white;
+      font-weight: bold;
+    }
+
+    .submit-btn {
+      background-color: #009CA6;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    .submit-btn:hover {
+      background-color: #007a82;
+    }
+
+    .email-field {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .email-field label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .email-field input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Pre-Survey</h1>
+  <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('active'); this.classList.toggle('open');">
+    <span></span><span></span><span></span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="literature.html">Literature</a>
+    <a href="history.html">History</a>
+    <a href="pre-survey.html" class="active">Pre-Survey</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Before you start your Hematology/Oncology rotation...</h2>
+  <p>Please answer the following questions. Your responses will help us understand your baseline confidence and guide improvements to the rotation.</p>
+
+  <form action="https://formspree.io/f/xldlvrna" method="POST">
+    
+    <div class="email-field">
+      <label for="email">Your Email (required)</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+
+    <!-- Question template -->
+    <div class="question">
+      <p>1. I feel confident interpreting common hematology lab abnormalities (e.g., CBC, peripheral smear).</p>
+      <div class="likert">
+        <input type="radio" id="q1-1" name="q1" value="Strongly Disagree" required><label for="q1-1">Strongly Disagree</label>
+        <input type="radio" id="q1-2" name="q1" value="Disagree"><label for="q1-2">Disagree</label>
+        <input type="radio" id="q1-3" name="q1" value="Neutral"><label for="q1-3">Neutral</label>
+        <input type="radio" id="q1-4" name="q1" value="Agree"><label for="q1-4">Agree</label>
+        <input type="radio" id="q1-5" name="q1" value="Strongly Agree"><label for="q1-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. I understand the initial evaluation and risk stratification of common oncologic emergencies (e.g., neutropenic fever).</p>
+      <div class="likert">
+        <input type="radio" id="q2-1" name="q2" value="Strongly Disagree" required><label for="q2-1">Strongly Disagree</label>
+        <input type="radio" id="q2-2" name="q2" value="Disagree"><label for="q2-2">Disagree</label>
+        <input type="radio" id="q2-3" name="q2" value="Neutral"><label for="q2-3">Neutral</label>
+        <input type="radio" id="q2-4" name="q2" value="Agree"><label for="q2-4">Agree</label>
+        <input type="radio" id="q2-5" name="q2" value="Strongly Agree"><label for="q2-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. I feel prepared to manage common inpatient hematology/oncology consults.</p>
+      <div class="likert">
+        <input type="radio" id="q3-1" name="q3" value="Strongly Disagree" required><label for="q3-1">Strongly Disagree</label>
+        <input type="radio" id="q3-2" name="q3" value="Disagree"><label for="q3-2">Disagree</label>
+        <input type="radio" id="q3-3" name="q3" value="Neutral"><label for="q3-3">Neutral</label>
+        <input type="radio" id="q3-4" name="q3" value="Agree"><label for="q3-4">Agree</label>
+        <input type="radio" id="q3-5" name="q3" value="Strongly Agree"><label for="q3-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. I can identify patients who require urgent hematology/oncology evaluation.</p>
+      <div class="likert">
+        <input type="radio" id="q4-1" name="q4" value="Strongly Disagree" required><label for="q4-1">Strongly Disagree</label>
+        <input type="radio" id="q4-2" name="q4" value="Disagree"><label for="q4-2">Disagree</label>
+        <input type="radio" id="q4-3" name="q4" value="Neutral"><label for="q4-3">Neutral</label>
+        <input type="radio" id="q4-4" name="q4" value="Agree"><label for="q4-4">Agree</label>
+        <input type="radio" id="q4-5" name="q4" value="Strongly Agree"><label for="q4-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>5. I am comfortable counseling patients and families about new hematology/oncology diagnoses.</p>
+      <div class="likert">
+        <input type="radio" id="q5-1" name="q5" value="Strongly Disagree" required><label for="q5-1">Strongly Disagree</label>
+        <input type="radio" id="q5-2" name="q5" value="Disagree"><label for="q5-2">Disagree</label>
+        <input type="radio" id="q5-3" name="q5" value="Neutral"><label for="q5-3">Neutral</label>
+        <input type="radio" id="q5-4" name="q5" value="Agree"><label for="q5-4">Agree</label>
+        <input type="radio" id="q5-5" name="q5" value="Strongly Agree"><label for="q5-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>6. I can create an initial diagnostic and management plan for common hematology conditions.</p>
+      <div class="likert">
+        <input type="radio" id="q6-1" name="q6" value="Strongly Disagree" required><label for="q6-1">Strongly Disagree</label>
+        <input type="radio" id="q6-2" name="q6" value="Disagree"><label for="q6-2">Disagree</label>
+        <input type="radio" id="q6-3" name="q6" value="Neutral"><label for="q6-3">Neutral</label>
+        <input type="radio" id="q6-4" name="q6" value="Agree"><label for="q6-4">Agree</label>
+        <input type="radio" id="q6-5" name="q6" value="Strongly Agree"><label for="q6-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>7. I can create an initial diagnostic and management plan for common oncology conditions.</p>
+      <div class="likert">
+        <input type="radio" id="q7-1" name="q7" value="Strongly Disagree" required><label for="q7-1">Strongly Disagree</label>
+        <input type="radio" id="q7-2" name="q7" value="Disagree"><label for="q7-2">Disagree</label>
+        <input type="radio" id="q7-3" name="q7" value="Neutral"><label for="q7-3">Neutral</label>
+        <input type="radio" id="q7-4" name="q7" value="Agree"><label for="q7-4">Agree</label>
+        <input type="radio" id="q7-5" name="q7" value="Strongly Agree"><label for="q7-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>8. I am familiar with the indications and basic interpretation of flow cytometry, cytogenetics, and molecular testing.</p>
+      <div class="likert">
+        <input type="radio" id="q8-1" name="q8" value="Strongly Disagree" required><label for="q8-1">Strongly Disagree</label>
+        <input type="radio" id="q8-2" name="q8" value="Disagree"><label for="q8-2">Disagree</label>
+        <input type="radio" id="q8-3" name="q8" value="Neutral"><label for="q8-3">Neutral</label>
+        <input type="radio" id="q8-4" name="q8" value="Agree"><label for="q8-4">Agree</label>
+        <input type="radio" id="q8-5" name="q8" value="Strongly Agree"><label for="q8-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>9. I can identify patients who may benefit from palliative care involvement during hospitalization.</p>
+      <div class="likert">
+        <input type="radio" id="q9-1" name="q9" value="Strongly Disagree" required><label for="q9-1">Strongly Disagree</label>
+        <input type="radio" id="q9-2" name="q9" value="Disagree"><label for="q9-2">Disagree</label>
+        <input type="radio" id="q9-3" name="q9" value="Neutral"><label for="q9-3">Neutral</label>
+        <input type="radio" id="q9-4" name="q9" value="Agree"><label for="q9-4">Agree</label>
+        <input type="radio" id="q9-5" name="q9" value="Strongly Agree"><label for="q9-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>10. Overall, I feel ready to begin my Hematology/Oncology rotation.</p>
+      <div class="likert">
+        <input type="radio" id="q10-1" name="q10" value="Strongly Disagree" required><label for="q10-1">Strongly Disagree</label>
+        <input type="radio" id="q10-2" name="q10" value="Disagree"><label for="q10-2">Disagree</label>
+        <input type="radio" id="q10-3" name="q10" value="Neutral"><label for="q10-3">Neutral</label>
+        <input type="radio" id="q10-4" name="q10" value="Agree"><label for="q10-4">Agree</label>
+        <input type="radio" id="q10-5" name="q10" value="Strongly Agree"><label for="q10-5">Strongly Agree</label>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Survey</button>
+  </form>
+</main>
+
+<footer>
+  &copy; 2025 Your Website Name. All rights reserved.
+</footer>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    const totalQuestions = 10;
+    for (let i = 1; i <= totalQuestions; i++) {
+      if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+        e.preventDefault();
+        alert("Please answer all questions before submitting.");
+        return;
+      }
+    }
+  });
+</script>
+</body>
+</html>
