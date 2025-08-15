@@ -22,7 +22,7 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* keeps hamburger at far right */
   padding: 0.75rem 1rem;
   position: relative;
   z-index: 10;
@@ -31,9 +31,11 @@ header {
 header h1 {
   font-size: 1.5rem;
   margin: 0;
+  flex: 1;                 /* allow h1 to shrink */
+  min-width: 0;            /* allow text to wrap properly */
+  word-break: break-word;  /* prevent overflow */
 }
 
-/* Hamburger menu styles */
 .hamburger {
   width: 28px;
   height: 22px;
@@ -43,12 +45,13 @@ header h1 {
   cursor: pointer;
   position: relative;
   z-index: 20;
+  flex-shrink: 0; /* prevent shrinking or overlap */
 }
 
 .hamburger span {
   display: block;
   height: 3px;
-  background-color: white; /* Sutter turquoise for hamburger lines */
+  background-color: white;
   border-radius: 2px;
   transition: 0.3s ease;
 }
@@ -97,9 +100,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  /* On desktop, cards left aligned */
   margin-left: 0;
 }
 
+/* Individual card */
 .card {
   background-color: #f9f9f9;
   padding: 1.5rem;
@@ -130,9 +135,23 @@ footer {
   }
 }
 
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  /* Center cards on mobile */
+  .card-container {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
   .card {
     width: 90vw;
     max-width: 600px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    max-width: 80%; /* ensures room for hamburger */
   }
 
   /* Navigation styles for mobile */
@@ -140,7 +159,7 @@ footer {
     position: absolute;
     top: 56px;
     right: 0;
-    background-color: #009CA6; /* Sutter turquoise */
+    background-color: #009CA6;
     flex-direction: column;
     width: 200px;
     transform: translateX(100%);
@@ -163,21 +182,5 @@ footer {
     position: fixed;
     top: 12px;
     right: 16px;
-  }
-
-  /* Improved mobile spacing for text-heavy pages */
-  main {
-    text-align: center;
-    padding: 1rem 2rem; /* more horizontal padding */
-    word-wrap: break-word;
-  }
-
-  main ul {
-    padding-left: 0;
-    list-style-position: inside;
-  }
-
-  main a {
-    word-break: break-word; /* break long URLs */
   }
 }
