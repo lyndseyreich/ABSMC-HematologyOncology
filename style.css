@@ -97,11 +97,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* On desktop, cards left aligned */
   margin-left: 0;
 }
 
-/* Individual card */
 .card {
   background-color: #f9f9f9;
   padding: 1.5rem;
@@ -176,13 +174,19 @@ footer {
     right: 16px;
   }
 
-  /* Center main content text on mobile (for literature page & others) */
+  /* Improved mobile spacing for text-heavy pages */
   main {
     text-align: center;
+    padding: 1rem 2rem; /* more horizontal padding */
+    word-wrap: break-word;
   }
 
   main ul {
     padding-left: 0;
     list-style-position: inside;
+  }
+
+  main a {
+    word-break: break-word; /* break long URLs */
   }
 }
